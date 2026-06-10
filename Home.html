@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home League Standings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        .nav-buttons {
+            margin-bottom: 15px;
+        }
+
+        .button {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: 2px solid black;
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+
+        .sheet-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .sheet {
+            width: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav-buttons">
+        <a href="home league.html" class="button">Home League</a>
+        <a href="friend league.html" class="button">Friend League</a>
+        <a href="foundation.html" class="button">Foints Per Team</a>
+    </div>
+
+    <h1>Home League Standings</h1>
+
+    <div class="sheet-container">
+        <iframe class="sheet"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=0&single=true"
+            height="600"></iframe>
+    </div>
+
+</body>
+
+</html>
