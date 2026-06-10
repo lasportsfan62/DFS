@@ -4,60 +4,93 @@
 <head>
     <title>Fantasy Futbol</title>
 
-    <!-- Mobile viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: "Times New Roman", Times, serif;
-            max-width: 1200px;
+            max-width: 900px;
             margin: auto;
-            padding: 15px;
+            padding: 20px;
+            background: #fafafa;
         }
 
         .hero-image {
             max-width: 100%;
             height: auto;
+            border-radius: 10px;
         }
 
+        h1 {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* CARD CONTAINER */
         .nav-buttons {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            flex-direction: column;
+            gap: 16px;
             margin-bottom: 15px;
         }
 
-        button {
-            font-size: 16px;
-            font-family: "Times New Roman", Times, serif;
+        /* CARD BUTTON STYLE */
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 22px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: black;
+            background: white;
+            border: 2px solid #000;
+            box-shadow: 2px 2px 0px #000;
+            transition: all 0.15s ease-in-out;
+            font-size: 22px;
             font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 6px;
-            border: 2px solid black;
-            cursor: pointer;
         }
 
-        .sheet-container {
-            width: 100%;
-            overflow-x: auto;
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0px #000;
         }
 
-        .sheet {
-            width: 100%;
-            border: none;
+        /* COLOR THEMES */
+        .home {
+            background: #e8f4ff;
+        }
+
+        .friend {
+            background: #fff3e6;
+        }
+
+        .foundation {
+            background: #eaffea;
+        }
+
+        .icon {
+            font-size: 28px;
+            margin-right: 12px;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .status-line {
+            font-size: 20px;
+            margin-top: 10px;
+            text-align: center;
+            color: #333;
         }
 
         @media (max-width: 768px) {
-            .nav-buttons {
-                flex-direction: column;
-            }
-
-            button {
-                width: 100%;
+            .card {
+                font-size: 18px;
+                padding: 18px;
             }
         }
     </style>
@@ -74,58 +107,45 @@
 
     <div class="nav-buttons">
 
-        <button onclick="document.getElementById('HLS').scrollIntoView();">
-            Home League Standings
-        </button>
+        <a href="home league.html" class="card home">
+            <div class="left">
+                <span class="icon">🏠</span>
+                Home League Standings
+            </div>
+            <span>→</span>
+        </a>
 
-        <button onclick="document.getElementById('ISL').scrollIntoView();">
-            Friend League Standings
-        </button>
+        <a href="friend league.html" class="card friend">
+            <div class="left">
+                <span class="icon">👥</span>
+                Friend League Standings
+            </div>
+            <span>→</span>
+        </a>
 
-        <button onclick="document.getElementById('Foundation').scrollIntoView();">
-            Foints Per Team
-        </button>
+        <a href="foundation.html" class="card foundation">
+            <div class="left">
+                <span class="icon">📊</span>
+                Foints Per Team
+            </div>
+            <span>→</span>
+        </a>
 
     </div>
 
-    <hr>
+    <div class="status-line" id="statusLine"></div>
 
-    <!-- Home League Standings -->
-    <h2 id="HLS">Home League Standings</h2>
+    <script>
+        function formatDate(date) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString(undefined, options);
+        }
 
-    <div class="sheet-container">
-        <iframe
-            class="sheet"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=0&single=true"
-            height="425">
-        </iframe>
-    </div>
+        const today = new Date();
 
-    <br><br>
-
-    <!-- Friend League Standings -->
-    <h2 id="ISL">Friend League Standings</h2>
-
-    <div class="sheet-container">
-        <iframe
-            class="sheet"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=67765779&single=true"
-            height="425">
-        </iframe>
-    </div>
-
-    <br><br>
-
-    <!-- Foundation Standings -->
-    <h2 id="Foundation">Foints Per Team</h2>
-
-    <div class="sheet-container">
-        <iframe
-            class="sheet"
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=1164090565&single=true"
-            height="650">
-        </iframe>
-    </div>
+        document.getElementById("statusLine").textContent =
+            `Last Updated: ${formatDate(today)} | Through Game xx/104`;
+    </script>
 
 </body>
 
