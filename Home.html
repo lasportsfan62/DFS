@@ -6,43 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        body {
-            font-family: "Times New Roman", Times, serif;
-            max-width: 1200px;
-            margin: auto;
-            padding: 15px;
-        }
-
-        .nav-buttons {
-            margin-bottom: 15px;
-        }
-
-        .button {
-            font-size: 16px;
-            font-weight: 700;
-            padding: 12px 22px;
-            border-radius: 10px;
-            border: 2px solid rgba(0,0,0,0.3);
-            text-decoration: none;
-            color: white;
-            display: inline-block;
-            margin-right: 8px;
-
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-            transition: all 0.2s ease-in-out;
-            position: relative;
-        }
-
-        .button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
-            filter: brightness(1.1);
-        }
-
-        .button:active {
-            transform: translateY(0px) scale(0.98);
-        }
-
+     
         .sheet-container {
             width: 100%;
             overflow-x: auto;
@@ -60,13 +24,13 @@
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                align-items: center; /* center the buttons */
+                align-items: center;
             }
 
             .button {
                 display: block;
-                width: 85%;        /* ⬅️ smaller than full width */
-                max-width: 320px; /* ⬅️ prevents them from getting too wide */
+                width: 85%;
+                max-width: 320px;
                 text-align: center;
                 margin-right: 0;
                 padding: 14px 16px;
@@ -74,37 +38,171 @@
             }
         }
     </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            max-width: 900px;
+            margin: auto;
+            padding: 18px;
+            background: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .status-line {
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 18px;
+            color: #333;
+        }
+
+        .results {
+            background: white;
+            border: 2px solid black;
+            border-radius: 12px;
+            box-shadow: 2px 2px 0px #000;
+            margin: 0 auto 18px auto;
+            overflow: hidden;
+            width: 50%;
+            min-width: 320px;
+        }
+
+        .results-header {
+            color: white;
+            padding: 10px 14px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .game {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            font-size: 18px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .game:last-child {
+            border-bottom: none;
+        }
+
+        .team {
+            flex: 1;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .team.right {
+            text-align: right;
+        }
+
+        .score {
+            font-weight: bold;
+            padding: 0 12px;
+            white-space: nowrap;
+            font-size: 18px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: black;
+            background: white;
+            border: 2px solid black;
+            box-shadow: 2px 2px 0px #000;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.15s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 26px;
+        }
+
+        .home { background: #e8f4ff; }
+        .friend { background: #fff3e6; }
+        .foundation { background: #eaffea; }
+
+        @media (max-width: 768px) {
+            .results {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
 </head>
 
-<body>
-
+    <!-- NAV CARDS -->
     <div class="nav-buttons">
-        <a href="index.html" class="button">Main Page</a>
-        <a href="Friend.html" class="button">Friend League</a>
-        <a href="Foundation.html" class="button">Foints Per Team</a>
-    </div>
+
+        <a href="index.html" class="card home">
+            <div class="left">
+                <span class="icon">🏆</span>
+                Main Page
+            </div>
+            <span>→</span>
+        </a>
+
+        <a href="Friend.html" class="card friend">
+            <div class="left">
+                <span class="icon">👥</span>
+                Friend League Standings
+            </div>
+            <span>→</span>
+        </a>
+
+        <a href="Foundation.html" class="card foundation">
+            <div class="left">
+                <span class="icon">📊</span>
+                Foints Per Team
+            </div>
+            <span>→</span>
+        </a>
+
+<body>
 
     <h1>Home League Standings</h1>
 
     <div class="sheet-container">
         <iframe class="sheet"
             src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=0&single=true"
-            height="600"></iframe>
+            height="400"></iframe>
     </div>
-
-    <script>
-        function randomColor() {
-            const hue = Math.floor(Math.random() * 360);
-            return `hsl(${hue}, 70%, 55%)`;
-        }
-
-        const buttons = document.querySelectorAll(".button");
-
-        buttons.forEach(btn => {
-            btn.style.background = randomColor();
-            btn.style.borderColor = "rgba(0,0,0,0.25)";
-        });
-    </script>
 
 </body>
 
