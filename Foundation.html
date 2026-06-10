@@ -8,39 +8,15 @@
     <style>
         body {
             font-family: "Times New Roman", Times, serif;
-            max-width: 1200px;
+            max-width: 900px;
             margin: auto;
-            padding: 15px;
+            padding: 18px;
+            background: #f7f7f7;
         }
 
-        .nav-buttons {
-            margin-bottom: 15px;
-        }
-
-        .button {
-            font-size: 16px;
-            font-weight: 700;
-            padding: 12px 22px;
-            border-radius: 10px;
-            border: 2px solid rgba(0,0,0,0.3);
-            text-decoration: none;
-            color: white;
-            display: inline-block;
-            margin-right: 8px;
-
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-            transition: all 0.2s ease-in-out;
-            position: relative;
-        }
-
-        .button:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.35);
-            filter: brightness(1.1);
-        }
-
-        .button:active {
-            transform: translateY(0px) scale(0.98);
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
         }
 
         .sheet-container {
@@ -52,15 +28,105 @@
             width: 100%;
             border: none;
         }
+
+        /* NAV CONTAINER */
+        .nav-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* CARD BUTTONS (same system as other pages) */
+        .card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: black;
+            background: white;
+            border: 2px solid black;
+            box-shadow: 2px 2px 0px #000;
+            font-size: 20px;
+            font-weight: bold;
+            transition: all 0.15s ease-in-out;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 26px;
+        }
+
+        /* BUTTON COLORS */
+        .main { background: #e8f4ff; }
+        .home-league { background: #fff3e6; }
+        .friend { background: #eaffea; }
+
+        /* MOBILE FIX */
+        @media (max-width: 768px) {
+
+            .nav-buttons {
+                align-items: center;
+            }
+
+            .card {
+                width: 92%;
+                max-width: 340px;
+                margin: 0 auto;
+            }
+
+            .card .left {
+                flex: 1;
+            }
+
+            .card span:last-child {
+                flex-shrink: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <div class="nav-buttons">
-        <a href="index.html" class="button">Main Page</a>
-        <a href="Home.html" class="button">Home League</a>
-        <a href="Friend.html" class="button">Friend League</a>
+
+        <a href="index.html" class="card main">
+            <div class="left">
+                <span class="icon">🏆</span>
+                Main Page
+            </div>
+            <span>→</span>
+        </a>
+
+        <a href="Home.html" class="card home-league">
+            <div class="left">
+                <span class="icon">🏠</span>
+                Home League
+            </div>
+            <span>→</span>
+        </a>
+
+        <a href="Friend.html" class="card friend">
+            <div class="left">
+                <span class="icon">👥</span>
+                Friend League
+            </div>
+            <span>→</span>
+        </a>
+
     </div>
 
     <h1>Foints Per Team</h1>
@@ -69,25 +135,7 @@
         <iframe class="sheet"
             src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=1164090565&single=true"
             height="600"></iframe>
-     </div>
-
-    <script>
-        function randomColor() {
-            // soft but vibrant colors
-            const hue = Math.floor(Math.random() * 360);
-            return `hsl(${hue}, 70%, 55%)`;
-        }
-
-        const buttons = document.querySelectorAll(".button");
-
-        buttons.forEach(btn => {
-            const color = randomColor();
-            btn.style.background = color;
-
-            // slightly darker border for contrast
-            btn.style.borderColor = "rgba(0,0,0,0.25)";
-        });
-    </script>
+    </div>
 
 </body>
 
