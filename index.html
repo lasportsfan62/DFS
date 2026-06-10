@@ -2,52 +2,130 @@
 <html>
 
 <head>
-    <title>Fantasy Survivor Scoreboard</title>
+    <title>Fantasy Futbol</title>
+
+    <!-- Mobile viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            font-size: 16px;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        .sheet-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .sheet {
+            width: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-<img 
-    src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmdtdnFob250ZjF5OTUybzNreWR1bXZwOWZwZHo2dzlzODBxZHBheSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/w5p7nIBwVxD3ASEGZE/giphy.gif"
-    alt="Fantasy Survivor Banner"
-    width="100%">
 
+    <img
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2lib3hsNjBvdG41Nms4d2Zhb2tndDlhejlqamR6YzMwa2NlaG9zMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gLWTWCg96RA0btDUm0/giphy.gif"
+        alt="Fantasy Futbol"
+        class="hero-image">
 
-    <h1>Fantasy Survivor Scoreboard</h1>
+    <h1>Fantasy Fútbol</h1>
 
-    <!-- Button for Episode 13 -->
-    <button onclick="document.getElementById('ep13').scrollIntoView();">
-        Mock Season 42, Episode 13
-    </button>
+    <div class="nav-buttons">
 
-    <!-- Button for Episode 12 -->
-    <button onclick="document.getElementById('ep12').scrollIntoView();">
-        Mock Season 42, Episode 12
-    </button>
+        <button onclick="document.getElementById('HLS').scrollIntoView();">
+            Home League Standings
+        </button>
+
+        <button onclick="document.getElementById('ISL').scrollIntoView();">
+            Friend League Standings
+        </button>
+
+        <button onclick="document.getElementById('Foundation').scrollIntoView();">
+            Foints Per Team
+        </button>
+
+    </div>
 
     <hr>
 
-    <!-- Episode 13 Section -->
-    <h3 id="ep13">Mock Season 42, Episode 13</h3>
+    <!-- Home League Standings -->
+    <h2 id="HLS">Home League Standings</h2>
 
-    <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ57MXUe2mHydUz32WTVP3-y_tXJ9WpdA45825B70Qk9Vah8D-z3nzjpV3K-TaEYrkmc9txUHSy3dIM/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"
-        width="100%"
-        height="1000"
-        style="border:none;">
-    </iframe>
+    <div class="sheet-container">
+        <iframe
+            class="sheet"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=0&single=true"
+            height="425">
+        </iframe>
+    </div>
 
     <br><br>
 
-    <!-- Episode 12 Section -->
-    <h3 id="ep12">Mock Season 42, Episode 12</h3>
+    <!-- Friend League Standings -->
+    <h2 id="ISL">Friend League Standings</h2>
 
-    <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQ57MXUe2mHydUz32WTVP3-y_tXJ9WpdA45825B70Qk9Vah8D-z3nzjpV3K-TaEYrkmc9txUHSy3dIM/pubhtml?gid=308360395&amp;single=true&amp;widget=true&amp;headers=false"
-        width="100%"
-        height="1000"
-        style="border:none;">
-    </iframe>
+    <div class="sheet-container">
+        <iframe
+            class="sheet"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=67765779&single=true"
+            height="425">
+        </iframe>
+    </div>
+
+    <br><br>
+
+    <!-- Foundation Standings -->
+    <h2 id="Foundation">Foints Per Team</h2>
+
+    <div class="sheet-container">
+        <iframe
+            class="sheet"
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=1164090565&single=true"
+            height="650">
+        </iframe>
+    </div>
 
 </body>
 
