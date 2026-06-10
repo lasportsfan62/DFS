@@ -52,6 +52,27 @@
             width: 100%;
             border: none;
         }
+
+        /* =========================
+           MOBILE ONLY IMPROVEMENTS
+           ========================= */
+        @media (max-width: 600px) {
+
+            .nav-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .button {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-right: 0;
+                padding: 14px 16px;
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -68,12 +89,11 @@
     <div class="sheet-container">
         <iframe class="sheet"
             src="https://docs.google.com/spreadsheets/d/e/2PACX-1vS_kMpc8iHhDJvjChvqH0-zd6LOiq_IBU8auxAuoHejs_7CxfQnCXceybmagp8wDmq6nDwEtqCxRhIQ/pubhtml?gid=0&single=true"
-            height="400"></iframe>
+            height="600"></iframe>
     </div>
 
     <script>
         function randomColor() {
-            // soft but vibrant colors
             const hue = Math.floor(Math.random() * 360);
             return `hsl(${hue}, 70%, 55%)`;
         }
@@ -83,8 +103,6 @@
         buttons.forEach(btn => {
             const color = randomColor();
             btn.style.background = color;
-
-            // slightly darker border for contrast
             btn.style.borderColor = "rgba(0,0,0,0.25)";
         });
     </script>
