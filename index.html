@@ -142,7 +142,7 @@
 
     <div class="status-line" id="statusLine"></div>
 
-    <!-- YESTERDAY RESULTS -->
+    <!-- TODAY'S GAMES -->
     <div class="results">
         <div class="results-header">⚽ Today's Games</div>
 
@@ -156,7 +156,24 @@
             <div class="team">Korea</div>
             <div class="score">vs.</div>
             <div class="team right">Czechia</div>
-        </div>    
+        </div>
+    </div>
+
+    <!-- YESTERDAY'S RESULTS (NEW IDENTICAL BOX) -->
+    <div class="results">
+        <div class="results-header">⚽ Yesterday’s Results</div>
+
+        <div class="game">
+            <div class="team">None</div>
+            <div class="score">0 - 0</div>
+            <div class="team right">Yet</div>
+        </div>
+
+        <div class="game">
+            <div class="team">None</div>
+            <div class="score">0 - 0</div>
+            <div class="team right">Yet</div>
+        </div>
     </div>
 
     <!-- NAV CARDS -->
@@ -183,18 +200,18 @@
                 <span class="icon">📊</span>
                 Foints Per Team
             </div>
-              <span>→</span>
+            <span>→</span>
         </a>
 
- </div>
-           <p></p>
+    </div>
+
+<p></p>
 
 <a href="https://soccer2026.app/bracket" target="_blank" title="World Cup 2026 Bracket"><img src="https://soccer2026.app/images/bracket/world-cup-2026-bracket-en.png" alt="World Cup 2026 Bracket" style="max-width:100%;height:auto;" /></a><p style="font-size:12px;color:#888;text-align:center;"></p>
 
 </div>
            <p></p>
 <a href="https://soccer2026.app/schedule" target="_blank" title="World Cup 2026 Schedule - All 104 Matches"><img src="https://soccer2026.app/images/og/world-cup-2026-full-schedule.png" alt="World Cup 2026 Schedule - All 104 matches with dates, kickoff times and venues" style="max-width:100%;height:auto;" /></a><p style="font-size:12px;color:#888;text-align:center;"></p>
-
     <script>
         function formatDate(date) {
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -214,7 +231,10 @@
         ];
 
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        document.querySelector(".results-header").style.backgroundColor = randomColor;
+        const headers = document.querySelectorAll(".results-header");
+headers.forEach(h => {
+    h.style.backgroundColor = randomColor;
+});
     </script>
 
 </body>
