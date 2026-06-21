@@ -143,13 +143,42 @@
 
     <div class="status-line" id="statusLine"></div>
     
-<p style="text-align:center; margin-top:20px; font-size:24px; color:#0A3161;">
-    🚨⚽🚨 With its 2-0 victory over Australia, USA: Clinches 1st place in Group D, secures back-to-back WC victories for first time since 1930 (Fact checked by Kerry...), and advances with a game to spare for first time in history.🚨⚽🚨
+<p style="text-align:center; margin-top:20px; font-size:24px; color:#BC002D;">
+    🚨⚽🚨 The Japan drubbing of Tunisia was the 1000th World Cup game ever played.🚨⚽🚨
 </p>
 
     <!-- TODAY'S GAMES -->
     <div class="results">
         <div class="results-header">⚽ Today’s Games</div>
+
+        <div class="game">
+            <div class="team">España</div>
+            <div class="score">vs.</div>
+            <div class="team right">Saudi Arabia</div>
+        </div>
+        
+        <div class="game">
+            <div class="team">Belgium</div>
+            <div class="score">vs</div>
+            <div class="team right">Iran</div>
+        </div>
+
+        <div class="game">
+            <div class="team">Uruguay</div>
+            <div class="score">vs.</div>
+            <div class="team right">Cape Verde</div>
+        </div>
+
+        <div class="game">
+            <div class="team">New Zealand</div>
+            <div class="score">vs.</div>
+            <div class="team right">Egypt</div>
+        </div>
+    </div>
+
+    <!-- YESTERDAY'S RESULTS (NEW IDENTICAL BOX) -->
+    <div class="results">
+        <div class="results-header">⚽ Yesterday’s Results</div>
 
         <div class="game">
             <div class="team">Netherlands 🏅</div>
@@ -171,37 +200,8 @@
 
         <div class="game">
             <div class="team">Tunisia</div>
-            <div class="score">vs.</div>
-            <div class="team right">Japan</div>
-        </div>
-    </div>
-
-    <!-- YESTERDAY'S RESULTS (NEW IDENTICAL BOX) -->
-    <div class="results">
-        <div class="results-header">⚽ Yesterday’s Results</div>
-
-        <div class="game">
-            <div class="team">USA 🏅</div>
-            <div class="score">2 - 0</div>
-            <div class="team right">Australia</div>
-        </div>
-        
-        <div class="game">
-            <div class="team">Scotland</div>
-            <div class="score">0 - 1</div>
-            <div class="team right">Morocco 🏅</div>
-        </div>
-
-        <div class="game">
-            <div class="team">Brazil 🏅</div>
-            <div class="score">3 - 0</div>
-            <div class="team right">Haiti</div>
-        </div>
-
-        <div class="game">
-            <div class="team">Türkiye</div>
-            <div class="score">0 - 1</div>
-            <div class="team right">Paraguay 🏅</div>
+            <div class="score">0 - 4</div>
+            <div class="team right">Japan 🏅</div>
         </div>
     </div>
 
@@ -256,7 +256,7 @@
         }
 
         document.getElementById("statusLine").textContent =
-            `Last Updated: ${formatDate(new Date())} | Through Game 35/104`;
+            `Last Updated: ${formatDate(new Date())} | Through Game 36/104`;
 
         const colors = [
             "#111111",
